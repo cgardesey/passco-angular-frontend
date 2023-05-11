@@ -1,0 +1,40 @@
+<script type="text/ng-template" id="nodes_renderer.html">
+    <li ng-class="node.nodes.length > 0 ? 'dropdown-submenu': ''" ng-repeat="node in node.nodes">
+        <a ng-show="node.nodes.length > 0" class="parent-a">{{node.name}}</a>
+        <a ng-show="node.nodes.length === 0" ng-click="select(node)">{{node.name}}</a>
+        <ul ng-show="node.nodes.length > 0" class="dropdown-menu" ng-include="'nodes_renderer.html'">
+        </ul>
+    </li>
+</script>
+<span>
+  <!-- <a ng-show='selected.id' ui-sref="mainList({ path: selected.id })">Selected path: {{selected.id}}</a> -->
+</span>
+<div class="container" >
+    <div class="row">
+        <div class="dropdown" >
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-default">
+                <span  >
+                  {{selected.id}}
+                </span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li ng-class="node.nodes.length > 0 ? 'dropdown-submenu': ''" ng-repeat="node in options">
+                    <a ng-show="node.nodes.length > 0" class="parent-a">{{node.name}}</a>
+                    <a ng-show="node.nodes.length === 0" ng-click="select(node)">{{node.name}}</a>
+                    <ul ng-show="node.nodes.length > 0" class="dropdown-menu" ng-include="'nodes_renderer.html'">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+      <script>
+    $(document).ready(function(){
+      $('.dropdown-submenu a.parent-a').on("click", function(e){
+        //$(this).next('ul').toggle();
+        e.stopPropagation();
+      //  e.preventDefault();
+      });
+    });
+    </script>
+</div>

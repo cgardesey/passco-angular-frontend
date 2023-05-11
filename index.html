@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app='PastQuestions'>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="lib/jquery-3.3.1.min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <!-- <link rel="stylesheet" href="css/styles.css"> -->
+  <meta name="viewport" content="width=device-width; initial-scale=1.0;">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/dropdownStyles.css"> -->
+  <!-- <link rel="stylesheet" href="css/multi-level-dropdown-menu.css"> -->
+
+  <title>WAEC Past Questions for SHS and JHS</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div>
+      <h1>WAEC Past Questions for SHS and JHS</h1>
+    </div>
+    <div ng-controller="TestCtrl as testCtrl">
+      <multi-level-dropdown-menu options="testCtrl.options" model="testCtrl.testVar"></multi-level-dropdown-menu>
+    </div>
+    <hr />
+    <ui-view></ui-view>
+    <loading-spinner></loading-spinner>
+  </div>
+
+  <!-- Libraries -->
+  <script src="lib/jquery-3.3.1.min.js"></script>
+
+  <script src="lib/angular.min.js"></script>
+  <script src="lib/angular-ui-router.min.js"></script>
+
+  <!-- Modules -->
+  <script src="src/pastquestions/pastquestions.module.js"></script>
+  <script src="src/spinner/spinner.module.js"></script>
+
+  <!-- <script src="src/test.js"></script>
+  <script src="src/multi-level-dropdown-menu.js"></script> -->
+  <!-- Routes -->
+  <script src="src/routes.js"></script>
+
+  <!-- 'PastQuestions' module artifacts -->
+  <script src="src/pastquestions/pastquestions.component.js"></script>
+  <script src="src/pastquestions/main-pastquestions.controller.js"></script>
+  <script src="src/pastquestions/pastquestions.service.js"></script>
+
+  <!-- 'Spinner' module artifacts -->
+  <script src="src/spinner/loadingspinner.component.js"></script>
+
+</body>
+
+</html>

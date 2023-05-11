@@ -1,0 +1,39 @@
+<div id="emptyDataMsg"class="" ng-show="mainList.items.length === 0">
+  <h2>Data not available</h2>
+</div>
+<div ng-show="mainList.items.length !== 0">
+  <div>
+    <img id="questionImage" ng-src="data:image/jpeg;base64, {{mainList.question.picture}}" />
+  </div>
+  <form action="" id="mcqOption" ng-show="mainList.question.ismcq == 1 && mainList.question.isendofquestion == 1">
+    <div>
+      <input type="radio" ng-change="mainList.optionChange()" ng-model="mainList.selectedOption" value="A"> A <img ng-if="mainList.showCorrectA" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVQ4EWNgGAWMpAaBw3wvCWbGv/P//mfMPJC44wETKQY4zPdQAGo+DrRV9A8b80eQXiAbRBHGEM3/9wM1vP3ByuJ6JHrre5AuIB9E4ce4NIN0wb3gtshNDCSAjiF+/r8NKP79z39mH5jNQD4YgQ1wWuhu9vcf413H+R5eYFEoAdH8dx+I+/c/s9OBxG0vQGxkDDZgX9zO0wz//y9iYvy/wWmhRyBIAcTZf0EB9u0nK4s1Ns0gdfAwCF0Vyvzu6+e5DIz/I/7/Z8xgZPxfBlKAy2aQHAjDDQBxGP4zMDovdJvAwMCYB5Q4ixzaYHksBNgLcHFGhv+2D6wKgfx6bAEGFB+ECABut2TcEiykTgAAAABJRU5ErkJggg==" /><img ng-if="mainList.showWrongA" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVQ4Ec1SPUsDQRCdWU+LQ1DRPmBreXB1FH+AKFeoP0DF+HM0Wir4EUX8B9oHUtobO4sEi2QVhIzz9tzb5GL6HLc7b9+8ebs7d0RT9Ui1GkmWzUw6FHLQDOeNX0i2NmfNV6PfbV9C6HkfwfU77StooPV8YUAPrz9E8qGJfdt9a0iSzCp2L7DtvN8T057TOK1LKZVHNwsR2430VJiOmOQx/hzsImEXojth2WahevzcPGZ1AY+hGCGMERORJ/VkNdz6rxhVYwYgncl6WhdDB1jzgC7il6aeijQFJozQg8ARJUlERlYKChhcQQQwZuAatmhuhXgHx9bjnwNbcEON9RYjVygXo2EQ9jbTMzU79I3lVku/GDLaoTxoW9Xd7fK3M4rV3d1ZJ55kEq6w+q0bGK2h63i5cqJA63J74PmlSk1beOMYaB0oTfhN8ceV6GKJHDQFMRXgF/VGlyx+m4Y+AAAAAElFTkSuQmCC" />
+    </div>
+    <div>
+      <input type="radio" ng-change="mainList.optionChange()" ng-model="mainList.selectedOption" value="B"> B <img ng-if="mainList.showCorrectB" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVQ4EWNgGAWMpAaBw3wvCWbGv/P//mfMPJC44wETKQY4zPdQAGo+DrRV9A8b80eQXiAbRBHGEM3/9wM1vP3ByuJ6JHrre5AuIB9E4ce4NIN0wb3gtshNDCSAjiF+/r8NKP79z39mH5jNQD4YgQ1wWuhu9vcf413H+R5eYFEoAdH8dx+I+/c/s9OBxG0vQGxkDDZgX9zO0wz//y9iYvy/wWmhRyBIAcTZf0EB9u0nK4s1Ns0gdfAwCF0Vyvzu6+e5DIz/I/7/Z8xgZPxfBlKAy2aQHAjDDQBxGP4zMDovdJvAwMCYB5Q4ixzaYHksBNgLcHFGhv+2D6wKgfx6bAEGFB+ECABut2TcEiykTgAAAABJRU5ErkJggg==" /><img ng-if="mainList.showWrongB" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVQ4Ec1SPUsDQRCdWU+LQ1DRPmBreXB1FH+AKFeoP0DF+HM0Wir4EUX8B9oHUtobO4sEi2QVhIzz9tzb5GL6HLc7b9+8ebs7d0RT9Ui1GkmWzUw6FHLQDOeNX0i2NmfNV6PfbV9C6HkfwfU77StooPV8YUAPrz9E8qGJfdt9a0iSzCp2L7DtvN8T057TOK1LKZVHNwsR2430VJiOmOQx/hzsImEXojth2WahevzcPGZ1AY+hGCGMERORJ/VkNdz6rxhVYwYgncl6WhdDB1jzgC7il6aeijQFJozQg8ARJUlERlYKChhcQQQwZuAatmhuhXgHx9bjnwNbcEON9RYjVygXo2EQ9jbTMzU79I3lVku/GDLaoTxoW9Xd7fK3M4rV3d1ZJ55kEq6w+q0bGK2h63i5cqJA63J74PmlSk1beOMYaB0oTfhN8ceV6GKJHDQFMRXgF/VGlyx+m4Y+AAAAAElFTkSuQmCC"  />
+    </div>
+    <div>
+      <input type="radio" ng-change="mainList.optionChange()" ng-model="mainList.selectedOption" value="C"> C <img ng-if="mainList.showCorrectC" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVQ4EWNgGAWMpAaBw3wvCWbGv/P//mfMPJC44wETKQY4zPdQAGo+DrRV9A8b80eQXiAbRBHGEM3/9wM1vP3ByuJ6JHrre5AuIB9E4ce4NIN0wb3gtshNDCSAjiF+/r8NKP79z39mH5jNQD4YgQ1wWuhu9vcf413H+R5eYFEoAdH8dx+I+/c/s9OBxG0vQGxkDDZgX9zO0wz//y9iYvy/wWmhRyBIAcTZf0EB9u0nK4s1Ns0gdfAwCF0Vyvzu6+e5DIz/I/7/Z8xgZPxfBlKAy2aQHAjDDQBxGP4zMDovdJvAwMCYB5Q4ixzaYHksBNgLcHFGhv+2D6wKgfx6bAEGFB+ECABut2TcEiykTgAAAABJRU5ErkJggg==" /><img ng-if="mainList.showWrongC" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVQ4Ec1SPUsDQRCdWU+LQ1DRPmBreXB1FH+AKFeoP0DF+HM0Wir4EUX8B9oHUtobO4sEi2QVhIzz9tzb5GL6HLc7b9+8ebs7d0RT9Ui1GkmWzUw6FHLQDOeNX0i2NmfNV6PfbV9C6HkfwfU77StooPV8YUAPrz9E8qGJfdt9a0iSzCp2L7DtvN8T057TOK1LKZVHNwsR2430VJiOmOQx/hzsImEXojth2WahevzcPGZ1AY+hGCGMERORJ/VkNdz6rxhVYwYgncl6WhdDB1jzgC7il6aeijQFJozQg8ARJUlERlYKChhcQQQwZuAatmhuhXgHx9bjnwNbcEON9RYjVygXo2EQ9jbTMzU79I3lVku/GDLaoTxoW9Xd7fK3M4rV3d1ZJ55kEq6w+q0bGK2h63i5cqJA63J74PmlSk1beOMYaB0oTfhN8ceV6GKJHDQFMRXgF/VGlyx+m4Y+AAAAAElFTkSuQmCC"  />
+    </div>
+    <div>
+      <input type="radio" ng-change="mainList.optionChange()" ng-model="mainList.selectedOption" value="D"> D <img ng-if="mainList.showCorrectD" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABBklEQVQ4EWNgGAWMpAaBw3wvCWbGv/P//mfMPJC44wETKQY4zPdQAGo+DrRV9A8b80eQXiAbRBHGEM3/9wM1vP3ByuJ6JHrre5AuIB9E4ce4NIN0wb3gtshNDCSAjiF+/r8NKP79z39mH5jNQD4YgQ1wWuhu9vcf413H+R5eYFEoAdH8dx+I+/c/s9OBxG0vQGxkDDZgX9zO0wz//y9iYvy/wWmhRyBIAcTZf0EB9u0nK4s1Ns0gdfAwCF0Vyvzu6+e5DIz/I/7/Z8xgZPxfBlKAy2aQHAjDDQBxGP4zMDovdJvAwMCYB5Q4ixzaYHksBNgLcHFGhv+2D6wKgfx6bAEGFB+ECABut2TcEiykTgAAAABJRU5ErkJggg==" /><img ng-if="mainList.showWrongD" ng-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABVklEQVQ4Ec1SPUsDQRCdWU+LQ1DRPmBreXB1FH+AKFeoP0DF+HM0Wir4EUX8B9oHUtobO4sEi2QVhIzz9tzb5GL6HLc7b9+8ebs7d0RT9Ui1GkmWzUw6FHLQDOeNX0i2NmfNV6PfbV9C6HkfwfU77StooPV8YUAPrz9E8qGJfdt9a0iSzCp2L7DtvN8T057TOK1LKZVHNwsR2430VJiOmOQx/hzsImEXojth2WahevzcPGZ1AY+hGCGMERORJ/VkNdz6rxhVYwYgncl6WhdDB1jzgC7il6aeijQFJozQg8ARJUlERlYKChhcQQQwZuAatmhuhXgHx9bjnwNbcEON9RYjVygXo2EQ9jbTMzU79I3lVku/GDLaoTxoW9Xd7fK3M4rV3d1ZJ55kEq6w+q0bGK2h63i5cqJA63J74PmlSk1beOMYaB0oTfhN8ceV6GKJHDQFMRXgF/VGlyx+m4Y+AAAAAElFTkSuQmCC"  />
+    </div>
+  </form>
+  <!-- <hr /> -->
+  <video ng-show="mainList.showVideo" ng-src="{{mainList.question.videopath}}" controls></video>
+
+  <div class="">
+    <button id="statusButton" ng-show="mainList.question.isendofquestion == 1" ng-click=mainList.why() class="btn btn-default">{{mainList.videoStatusText}}</button>
+  </div>
+  <hr />
+  <div class="quizNav">
+    <div>
+      <button ng-show="mainList.question.isfirstquestion != 1" ng-click=mainList.prevClicked() class="btn btn-default">Prev</button>
+      <button ng-show="mainList.question.islastquestion != 1" ng-click=mainList.nextClicked() class="btn btn-default">Next</button>
+    </div>
+  </div>
+</div>
+
+<!-- <shopping-list items="mainList.items"></shopping-list> -->
+
+<ui-view></ui-view>
